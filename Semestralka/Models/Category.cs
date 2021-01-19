@@ -13,8 +13,7 @@ namespace Semestralka.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        [Range(1,int.MaxValue,ErrorMessage ="must be bigger than 0 ")]
-        public int DisplayOrder { get; set; }
+        public string Description { get; set; }
 
 
     }

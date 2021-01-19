@@ -27,7 +27,7 @@ namespace Semestralka.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("DisplayOrder")
+                    b.Property<int>("Description")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
