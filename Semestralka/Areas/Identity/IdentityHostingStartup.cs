@@ -20,7 +20,8 @@ namespace Semestralka.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("AuthDbContextConnection")));
 
-                services.AddDefaultIdentity<SemestralkaUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<SemestralkaUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                    .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<AuthDbContext>();
             });
         }
