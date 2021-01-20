@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Semestralka.Data;
 using Semestralka.Models;
 using System;
@@ -21,12 +22,12 @@ namespace Semestralka.Controllers
             IEnumerable<Category> objList = _db.Categories;
             return View(objList);
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
@@ -40,6 +41,7 @@ namespace Semestralka.Controllers
             return View(obj);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
             if(id == null || id == 0)
@@ -49,7 +51,7 @@ namespace Semestralka.Controllers
             var obj = _db.Categories.Find(id);
             return View(obj);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Category obj)
@@ -62,6 +64,7 @@ namespace Semestralka.Controllers
             }
             return View(obj);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             if (id == null || id == 0)
@@ -75,7 +78,7 @@ namespace Semestralka.Controllers
             }
             return View(obj);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int id)

@@ -1,0 +1,36 @@
+﻿@model Semestralka.Models.Order
+<form method="post">
+    <input asp-for="Id" hidden />
+    <input asp-for="UserEmail" hidden />
+    <input asp-for="Description" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Set Status</h2>
+            <div class="col-6">
+                <a asp-action="Index" class="btn btn-primary">
+                    Back
+                </a>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="State"></label>
+            <input asp-for="State" class="form-control" placeholder="Set Status">
+            <span asp-validation-for="State" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input type="submit" class="btn btn-info w-100" value="Update" />
+        </div>
+
+
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}

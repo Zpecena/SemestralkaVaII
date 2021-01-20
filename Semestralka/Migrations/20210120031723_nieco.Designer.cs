@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Semestralka.Data;
 
 namespace Semestralka.Migrations
 {
     [DbContext(typeof(SemestralkaDbContext))]
-    partial class SemestralkaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210120031723_nieco")]
+    partial class nieco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

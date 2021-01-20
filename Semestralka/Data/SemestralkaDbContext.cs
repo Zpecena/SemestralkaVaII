@@ -15,5 +15,7 @@ namespace Semestralka.Data
         }
 
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
     }
 }
