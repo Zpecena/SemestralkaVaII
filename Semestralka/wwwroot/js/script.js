@@ -5,6 +5,10 @@ form.addEventListener('submit', (e) => {
     let messages = []
     if (desc.value == '' || desc.value == null) {
         messages.push('Descriptiom of order is Required')
+    }
+    if (!(desc.value.match("^[a-zA-Z0-9]*$"))) {
+        messages.push('Order must be alphanumeric');
+    }
 
 
     if (desc.value.length < 15) {
